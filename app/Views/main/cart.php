@@ -32,7 +32,7 @@
                                         <tr>
                                             <td class="thumbnail-img">
                                                 <a href="#">
-                                            <img class="img-fluid" src="images/prods/img-pro-01.jpg" alt="" />
+                                            <img class="img-fluid" src="/assets/images/prods/img-pro-01.jpg" alt="" />
                                         </a>
                                             </td>
                                             <td class="name-pr">
@@ -57,7 +57,7 @@
                                         <tr>
                                             <td class="thumbnail-img">
                                                 <a href="#">
-                                            <img class="img-fluid" src="images/prods/img-pro-02.jpg" alt="" />
+                                            <img class="img-fluid" src="/assets/images/prods/img-pro-02.jpg" alt="" />
                                         </a>
                                             </td>
                                             <td class="name-pr">
@@ -81,7 +81,7 @@
                                         <tr>
                                             <td class="thumbnail-img">
                                                 <a href="#">
-                                            <img class="img-fluid" src="images/prods/img-pro-03.jpg" alt="" />
+                                            <img class="img-fluid" src="/assets/images/prods/img-pro-03.jpg" alt="" />
                                         </a>
                                             </td>
                                             <td class="name-pr">

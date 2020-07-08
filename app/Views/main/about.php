@@ -18,7 +18,7 @@
             <div class="overview-content">
 
                 <div>
-                    <img src="../assets/images/overview.jpg" alt="">
+                    <img src="/assets/images/overview.jpg" alt="">
                 </div>
                 <div>
                     <h2><strong>We are Vegan</strong></h2>

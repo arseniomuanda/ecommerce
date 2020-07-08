@@ -7,7 +7,7 @@
     <title>Vegan App | Home</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="<?=base_url('../assets/css/style.css')?>">
 
 </head>
 <body>
@@ -16,22 +16,22 @@
         <nav class="menu">
             <ul class="menu">
                 <li class="item-list">
-                    <a href="/home">Home</a>
+                    <a href="<?= base_url('/home')?>">Home</a>
                 </li>
                  <li class="item-list">
                     <a href="#services">Services</a>
                 </li>
                 <li class="item-list">
-                    <a href="products-grid.html">Products</a>
+                    <a href="<?=base_url('/item')?>">Products</a>
                 </li>
                 <!-- <li class="item-list">
                     <a href="account.html">My Account</a>
                 </li> -->
                 <li class="item-list">
-                    <a href="#overview">About Us</a>
+                    <a href="<?=base_url('/home/about')?>">About Us</a>
                 </li>
                 <li class="item-list">
-                    <a href="/ecommerce/home/contact">Contact Us</a>
+                    <a href="<?=base_url('/home/contact')?>">Contact Us</a>
                 </li>
 
                 <li class="item-list" id="btn-log">

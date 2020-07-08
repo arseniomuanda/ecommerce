@@ -18,7 +18,7 @@
             <div class="overview-content">
 
                 <div>
-                    <img src="../assets/images/instagram-img/instagram-img-06.jpg" alt="">
+                    <img src="/assets/images/instagram-img/instagram-img-06.jpg" alt="">
                 </div>
 
                 <div>

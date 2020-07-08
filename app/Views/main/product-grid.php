@@ -1,241 +1,111 @@
-<!-- View | Product-Grid-->
+<!--= View | Product-Grid -->
 <div class="section" id="start">
-            <div class="container">
-                <h2>
-                    Products
-                </h2>
-                <h3>Featured Products</h3>
-                <hr>
-                
-            </div>
-        </div>
+    <div class="container">
+        <h2>
+            Products
+        </h2>
+        <h3>Featured Products</h3>
+        <hr>
+
+    </div>
+    </div>
+
 
     <div class="section" id="overview">
         <div class="container">
-                <h2>
-                    Podded Vegetables
-                    </h2>
-                    
-                    <hr>
+            <h2>
+                Legumes
+            </h2>
+
+            <hr>
             <div class="section-grid">
                 <ul class="list-grid">
-                    <li>
-                        <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(../assets/images/prods/img-pro-03.jpg);">
-                            <div class="box-grid-detals">
-                                <h3>Paint</h3>
-                                <div class="detals-price">
-                                    <h4>120.00Kz</h4>
-                                </div>
-                            </div>
-                            
-                            <div class="disc">
-                                <h4>Paint</h4>
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, in!</p>
-                                 <ul>
-                                     <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    
-                                 </ul>
-                                 
-                                 
-                            </div>
-                            
-                        </div>
-                        
-                
-                    </li>
-                    <li>
-                            <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(../assets/images/prods/img-pro-02.jpg);">
+                    <?php foreach ($legumes as $legume) { ?>
+                        <li>
+                            <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(/assets/images/prods/img-pro-03.jpg);">
                                 <div class="box-grid-detals">
-                                    <h3>Paint</h3>
+                                    <h3><?= $legume['name'] ?></h3>
                                     <div class="detals-price">
-                                        <h4>120.00Kz</h4>
+                                        <h4><?= number_format($legume['price'], 2, ',', '.') ?></h4>
                                     </div>
                                 </div>
-                                
+
                                 <div class="disc">
-                                    <h4>Paint</h4>
-                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, in!</p>
-                                     <ul>
-                                         <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
-                                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        
-                                     </ul>
-                                     
-                                     
+                                    <h4><?= $legume['name'] ?></h4>
+                                    <p><?= $legume['desc1'] ?></p>
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="/item/single/<?= $legume['id'] ?>"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
                                 </div>
-                                
-                                
                             </div>
-                    
                         </li>
-                         <li>
-                        <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(../assets/images/prods/img-pro-01.jpg);">
-                            <div class="box-grid-detals">
-                                <h3>Paint</h3>
-                                <div class="detals-price">
-                                    <h4>120.00Kz</h4>
+                    <?php } ?>
+                </ul>
+            </div>
+            <h2>
+                Frutas
+            </h2>
+            <hr>
+
+            <div class="section-grid">
+                <ul class="list-grid">
+                    <?php foreach ($frutas as $fruta) { ?>
+                        <li>
+                            <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(/assets/images/prods/img-pro-03.jpg);">
+                                <div class="box-grid-detals">
+                                    <h3><?= $fruta['name'] ?></h3>
+                                    <div class="detals-price">
+                                        <h4><?= number_format($fruta['price'], 2, ',', '.') ?></h4>
+                                    </div>
+                                </div>
+
+                                <div class="disc">
+                                    <h4><?= $fruta['name'] ?></h4>
+                                    <p><?= $fruta['desc1'] ?></p>
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="/item/single/"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <div class="disc">
-                                <h4>Paint</h4>
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, in!</p>
-                                 <ul>
-                                     <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    
-                                 </ul>
-                                 
-                                 
-                            </div>
-                            
-                        </div>
-                
-                    </li>
-                    <li>
-                        <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(../assets/images/prods/instagram-img-08.jpg);">
-                            <div class="box-grid-detals">
-                                <h3>Paint</h3>
-                                
-                                <div class="detals-price">
-                                    <h4>120.00Kz</h4>
-                                </div>
-                            </div>
-                            
-                            <div class="disc">
-                                <h4>Paint</h4>
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, in!</p>
-                                 <ul>
-                                     <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    
-                                 </ul>
-                                 
-                                 
-                            </div>
-                            
-                        </div>
-                
-                    </li>
+                        </li>
+                    <?php } ?>
 
                 </ul>
             </div>
             <h2>
-                Fruits Products
+                Outro Nome
             </h2>
-            
+
             <hr>
             <div class="section-grid">
                 <ul class="list-grid">
-                    <li>
-                        <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(../assets/images/prods/gallery-img-03.jpg);">
-                            <div class="box-grid-detals">
-                                <h3>Paint</h3>
-                                <div class="detals-price">
-                                    <h4>120.00Kz</h4>
-                                </div>
-                            </div>
-                            
-                            <div class="disc">
-                                <h4>Paint</h4>
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, in!</p>
-                                 <ul>
-                                     <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    
-                                 </ul>
-                                 
-                                 
-                            </div>
-                            
-                            
-                        </div>
-                
-                    </li>
-                    <li>
-                            <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(../assets/images/prods/gallery-img-04.jpg);">
+                    <?php foreach ($sucos as $suco) { ?>
+                        <li>
+                            <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(/assets/images/prods/img-pro-03.jpg);">
                                 <div class="box-grid-detals">
-                                    <h3>Paint</h3>
+                                    <h3><?= $suco['name'] ?></h3>
                                     <div class="detals-price">
-                                        <h4>120.00Kz</h4>
+                                        <h4><?= number_format($suco['price'], 2, ',', '.') ?></h4>
                                     </div>
                                 </div>
-                                
-                                <div class="disc">
-                                    <h4>Paint</h4>
-                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, in!</p>
-                                     <ul>
-                                         <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
-                                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        
-                                     </ul>   
-                                </div>
-                                
-                                
-                            </div>
-                    
-                        </li>
-                         <li>
-                        <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(../assets/images/prods/gallery-img-07.jpg);">
-                            <div class="box-grid-detals">
-                                <h3>Paint</h3>
-                                <div class="detals-price">
-                                    <h4>120.00Kz</h4>
-                                </div>
-                            </div>
-                            
-                            <div class="disc">
-                                <h4>Paint</h4>
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, in!</p>
-                                 <ul>
-                                     <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    
-                                 </ul>
-                                 
-                                 
-                            </div>
-                            
-                        </div>
-                
-                    </li>
-                    <li>
-                        <div class="box-grid-i" style="background:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.10)),url(../assets/images/prods/gallery-img-08.jpg);">
-                            <div class="box-grid-detals">
-                                <h3>Paint</h3>
-                                <div class="detals-price">
-                                    <h4>120.00Kz</h4>
-                                </div>
-                            </div>
-                            
-                            <div class="disc">
-                                <h4>Paint</h4>
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, in!</p>
-                                 <ul>
-                                     <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                 </ul>
-                                 
-                                 
-                            </div>
-                            
-                        </div>
-                
-                    </li>
 
+                                <div class="disc">
+                                    <h4><?= $suco['name'] ?></h4>
+                                    <p><?= $suco['desc1'] ?></p>
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="/item/single/<?= $suco['id'] ?>"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
-            
-            <a href="product-search.html" class="fields-btn">Search More</a>
+
+            <a href="/item/pesquisar" class="fields-btn">Search More</a>
 
         </div>
     </div>

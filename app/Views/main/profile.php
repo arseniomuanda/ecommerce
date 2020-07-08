@@ -44,7 +44,7 @@
                                 <div class="block block-three"></div>
                                 <div class="block block-four"></div>
                                 <a href="javascript:void(0)">
-                                    <img class="avatar" src="images/profile/default-avatar.png" alt="...">
+                                    <img class="avatar" src="assets/images/profile/default-avatar.png" alt="...">
                                     <h5 class="title">Arsénio Muanda</h5>
                                 </a>
                                 <p class="description-profile">

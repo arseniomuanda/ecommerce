@@ -17,9 +17,8 @@
                     <h2>Search Any Product</h2>
                     <hr>
                         
-                        <form action="">
+                        <form method="POST">
                             <input type="text" class="fields"  name="item-name-prod" placeholder="Name">
-                            <input type="text" class="fields" name="item-type-product" placeholder="Type"><br>
                             <select name="categories" class="fields" id="categories">
                                 <option value="cat-0">Categories</option>
                                 <option value="cat-1">Bulbs</option>
@@ -41,3 +40,10 @@
             
         </div>
     </div>
+
+    <div id="produtos">
+        <!-- Listas ou tabela dos productos resultados da pesquisa-->
+    </div>
+<script src="/assets/js/search.js">
+
+</script>

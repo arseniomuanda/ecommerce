@@ -6,13 +6,49 @@ use App\Models\ItemModel;
 
 class Item extends BaseController
 {
-    public function lista()
+    public function index()
     {
         $model = new ItemModel();
         $data = [
-            'item' => $model->get()->paginate(1000),
+            'frutas' => $model->get()->where(['category' => 'fruta'])->paginate(4),
+            'legumes' => $model->get()->where(['category' => 'legume'])->paginate(4),
+            'sucos' => $model->get()->where(['category' => 'suco'])->paginate(4),
         ];
-        return view('welcome_message', $data);
+        return view('templates/header') . view('main/product-grid', $data) . view('templates/footer');
+    }
+
+    public function search()
+    {
+        $db = \Config\Database::connect();
+        $data = [
+            'item' => $db->query("SELECT * FROM `item` WHERE item.price <= 10000000 AND item.category LIKE '' AND name LIKE '%'"),
+        ];
+        return view('main/product-search', $data);
+    }
+    
+    public function pesquisar()
+    {
+        $db = \Config\Database::connect();
+        
+        $price = $this->request->getVar('price')? 'ds': 123;
+        $category = $this->request->getVar('caregory') ? 'fruta' : 'fruta';
+        $name = $this->request->getVar('name')? 'a': 'a';
+        
+        $data = [
+            'item' => $db->query("SELECT * FROM `item` WHERE item.price <= $price AND item.category LIKE '$category' AND name LIKE '$name%'"),
+        ];
+        return view('templates/header') . view('main/product-search', $data) . view('templates/footer');
+    }
+
+
+
+    public function single($id = null)
+    {
+        $model = new ItemModel();
+        $data = [
+            'item' => $model->get($id)->paginate(1000),
+        ];
+        return view('templates/header') . view('main/product-single',$data) . view('templates/footer');
     }
 
     public function create()
