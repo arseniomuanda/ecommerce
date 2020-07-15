@@ -12,9 +12,9 @@ class BuyItemModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['name', 'setting_id', 'contact_id', 'number', 'cost', 'amount', 'category', 'status', 'date'];
+    protected $allowedFields = ['setting_id', 'buy_id', 'item_id', 'taxa', 'cost', 'amount'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';

@@ -14,7 +14,7 @@ class FilesModel extends Model
 
     protected $allowedFields = ['setting_id', 'reference', 'alt', 'path', 'type'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';

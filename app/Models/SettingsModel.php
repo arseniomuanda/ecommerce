@@ -14,7 +14,7 @@ class SettingsModel extends Model
 
     protected $allowedFields = ['title', 'currency', 'country', 'city', 'district', 'street', 'home'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';

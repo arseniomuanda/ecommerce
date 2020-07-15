@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\BuyItemModel;
+use App\Models\BuyModel;
 
 class BuyItem extends BaseController
 {
@@ -17,33 +18,34 @@ class BuyItem extends BaseController
 
     public function create()
     {
+        $id = null;
         $model = new BuyItemModel();
-        if ($this->validate([
-            'name' => 'required|min_length[3]|max_length[50]',
-            'setting_id' => 'required|min_length[3]|max_length[50]',
-            'contact_id' => 'required|min_length[3]|max_length[50]',
-            'number' => 'required|min_length[3]|max_length[50]',
-            'cost' => 'required|min_length[3]|max_length[50]',
-            'amount' => 'required|min_length[3]|max_length[50]',
-            'category' => 'required|min_length[3]|max_length[50]',
-            'status' => 'required|min_length[3]|max_length[50]',
-            'date' => 'required|min_length[3]|max_length[50]',
-        ])) {
-            return 'teu cadastrao n funcionou porke falha na falidaçao';
-        } else {
-            return $model->save([
-                'id' => $this->request->getVar('id'),
-                'name' => $this->request->getVar('name'),
-                'setting_id' => $this->request->getVar('setting_id'),
-                'contact_id' => $this->request->getVar('contact_id'),
-                'number' => $this->request->getVar('number'),
-                'cost' => $this->request->getVar('cost'),
-                'amount' => $this->request->getVar('amount'),
-                'category' => $this->request->getVar('category'),
-                'status' => $this->request->getVar('status'),
-                'date' => $this->request->getVar('date'),
+        $db = \Config\Database::connect();
+        if (session()->get('buy_id') === null) {
+            $model2 = new BuyModel();
+            $model2->save([
+                'contact_id' => session()->get('user_id'),
+                'setting_id' => 1,
             ]);
+            $cliente = session()->get('user_id');
+            $row = $db->query("SELECT MAX(id) AS id FROM `buy` WHERE contact_id = $cliente")->getRow();
+            if (isset($row)) {
+                $id = $row->id;
+            }
+            session()->set(['buy_id' => $id]);
         }
+        if($model->save([
+            'id' => $this->request->getVar('id'),
+            'setting_id' => 1,
+            'buy_id' => session()->get('buy_id'),
+            'item_id' => $this->request->getVar('item_id'),
+            'taxe' => $this->request->getVar('taxe'),
+            'cost' => $this->request->getVar('cost'),
+            'amount' => $this->request->getVar('amount'),
+        ])){
+            session()->set(['cart'=> session()->get('cart')+1]);
+        }
+
     }
 
     public function deletar($id)

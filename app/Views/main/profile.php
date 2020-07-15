@@ -1,16 +1,4 @@
 <!-- View | Profile User -->
-<div class="section" id="start">
-        <div class="container">
-            <h2>
-                Edit My Profile
-            </h2>
-            <h3>That Is All About Me.</h3>
-            <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores animi eligendi quisquam quas dolor
-                nihil.</p>
-        </div>
-    </div>
-
     <div class="section" id="profile-section">
         <div class="container">
             <div class="profile-content">

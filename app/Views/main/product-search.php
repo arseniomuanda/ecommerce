@@ -1,49 +1,57 @@
 <!-- View | Product Search -->
+<div class="section" id="contact-form">
+    <div class="container">
 
-<div class="section" id="start">
-            <div class="container">
-                <h2>
-                    Search Products
-                </h2>
-                <h3>Search Your favorite product.</h3>
+        <div class="search-content">
+
+            <div id="produtos">
+
+
+
+            </div>
+
+            <div>
+                <h2>Search Any Product</h2>
                 <hr>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, provident?</p>
+
+                <form method="POST">
+                    <input type="text" class="fields" id="name" name="name" placeholder="Name">
+                    <select name="categories" class="fields" id="category" name="category">
+                        <option value="fruta">Fruta</option>
+                        <option value="suco">Suco</option>
+                        <option value="legume">Legume</option>
+                    </select><br>
+                    <input type="number" class="fields" name="price" id="price" placeholder="Price"><br>
+                </form>
             </div>
-        </div>
 
-    <div class="section" id="contact-form">
-        <div class="container">
-                <div>
-                    <h2>Search Any Product</h2>
-                    <hr>
-                        
-                        <form method="POST">
-                            <input type="text" class="fields"  name="item-name-prod" placeholder="Name">
-                            <select name="categories" class="fields" id="categories">
-                                <option value="cat-0">Categories</option>
-                                <option value="cat-1">Bulbs</option>
-                                <option value="cat-2">Fruits</option>
-                                <option value="cat-3">Podded Vegetables</option>
-                                <option value="cat-4">Root and tuberous</option>
-                            </select>
-
-                            <input type="number" class="fields" name="item-price-product" placeholder="Price"><br>
-                            
-    
-                            <input type="submit" class="fields-btn" value="Search" name="btn-login">
-                        </form>
-                    </div>
-                </div>
-
-               
-            </div>
-            
         </div>
     </div>
+</div>
 
-    <div id="produtos">
-        <!-- Listas ou tabela dos productos resultados da pesquisa-->
-    </div>
-<script src="/assets/js/search.js">
+<script>
+    $('document').ready(function() {
+        $('#name').keyup(function() {
+            var name = $('#name').val()
+            var category = $('#category').val()
+            var price = $('#price').val()
+            console.log(name)
+            $.ajax({
+                url: '/item/search',
+                method: 'POST',
+                data: {
+                    name: name,
+                    category: category,
+                    price: price,
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                success: function(data1) {
+                    $('#produtos').html(data1)
+                }
+            })
 
+        })
+    })
 </script>

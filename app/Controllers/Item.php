@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\BuyItemModel;
 use App\Models\ItemModel;
+use Config\Database;
 
 class Item extends BaseController
 {
@@ -10,45 +12,43 @@ class Item extends BaseController
     {
         $model = new ItemModel();
         $data = [
-            'frutas' => $model->get()->where(['category' => 'fruta'])->paginate(4),
-            'legumes' => $model->get()->where(['category' => 'legume'])->paginate(4),
-            'sucos' => $model->get()->where(['category' => 'suco'])->paginate(4),
+            'diversos' => $model->get()->paginate(3),
+            'frutas' => $model->get()->where(['category' => 'fruta'])->paginate(3),
         ];
         return view('templates/header') . view('main/product-grid', $data) . view('templates/footer');
+    }
+
+    public function add()
+    {
+        if ((session()->get('is_admin') != 1))
+            return view('templates/header') . view('main/index') . view('templates/footer');
+        return view('templates/header') . view('main/product-add') . view('templates/footer');
     }
 
     public function search()
     {
         $db = \Config\Database::connect();
+        $price = ($this->request->getVar('price') == '') ? 1000000 : $this->request->getVar('price');
+        $category = ($this->request->getVar('caregory') == '') ? 'fruta' : $this->request->getVar('caregory');
+        $name = ($this->request->getVar('name') == '') ? 'eu' : $this->request->getVar('name');
         $data = [
-            'item' => $db->query("SELECT * FROM `item` WHERE item.price <= 10000000 AND item.category LIKE '' AND name LIKE '%'"),
+            'items' => $db->query("SELECT * FROM `item` WHERE item.price <= $price AND item.category LIKE '$category' AND name LIKE '$name%' LIMIT 6")->getResultArray(),
         ];
-        return view('main/product-search', $data);
+        return view('lista/product', $data);
     }
-    
+
     public function pesquisar()
     {
-        $db = \Config\Database::connect();
-        
-        $price = $this->request->getVar('price')? 'ds': 123;
-        $category = $this->request->getVar('caregory') ? 'fruta' : 'fruta';
-        $name = $this->request->getVar('name')? 'a': 'a';
-        
-        $data = [
-            'item' => $db->query("SELECT * FROM `item` WHERE item.price <= $price AND item.category LIKE '$category' AND name LIKE '$name%'"),
-        ];
-        return view('templates/header') . view('main/product-search', $data) . view('templates/footer');
+        return view('templates/header') . view('main/product-search') . view('templates/footer');
     }
-
-
 
     public function single($id = null)
     {
         $model = new ItemModel();
         $data = [
-            'item' => $model->get($id)->paginate(1000),
+            'items' => $model->get($id)->paginate(1),
         ];
-        return view('templates/header') . view('main/product-single',$data) . view('templates/footer');
+        return view('templates/header') . view('main/product-single', $data) . view('templates/footer');
     }
 
     public function create()
@@ -82,5 +82,21 @@ class Item extends BaseController
     {
         $model = new ItemModel();
         return $model->delete($id);
+    }
+
+    public function cart()
+    {
+        return view('lista/cart');
+    }
+
+    public function updateCart()
+    {
+        $db = Database::connect();
+        $amount = $this->request->getVar('amount');
+        $price = $this->request->getVar('price');
+        $id = $this->request->getVar('id');
+
+        $price = ($price*$amount);
+        return $db->query("UPDATE buy_item SET cost = $price, amount = $amount Where id =$id");
     }
 }

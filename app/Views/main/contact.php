@@ -1,16 +1,6 @@
 <!-- View | Contact Us -->
 
 <div class="section" id="start">
-            <div class="container">
-                <h2>
-                    contact Us
-                </h2>
-                <h3>Contact info.</h3>
-                <hr>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias corrupti similique rem sunt officia. Impedit?</p>
-            </div>
-        </div>
-    
     <!-- Contacts section -->
     <a name="contact"></a>
     <div class="section" id="contact">

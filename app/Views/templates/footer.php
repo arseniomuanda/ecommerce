@@ -5,7 +5,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-01.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -13,7 +13,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-02.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -21,7 +21,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-03.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -29,7 +29,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-04.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -37,7 +37,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-05.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -45,7 +45,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-06.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -53,7 +53,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-07.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -61,7 +61,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-08.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -69,7 +69,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-09.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -77,7 +77,7 @@
                <div class="ins-inner-box">
                    <img src="<?= base_url('/assets/images/instagram-img/instagram-img-01.jpg') ?>" alt="" />
                    <div class="hov-in">
-                       <a href="#"><i class="fa fa-eye"></i></a>
+                       <a href="/item/single/62"><i class="fa fa-eye"></i></a>
                    </div>
                </div>
            </div>
@@ -96,7 +96,7 @@
        <div class="footer-content">
            <div>
                <strong>
-                   <p>2020 © <a href="" class="footer-icon">Vegan App</a> All .</p>
+                   <p>2020 © <a href="" class="footer-icon">Vegan App</a> All rights reserved.</p>
                </strong>
 
            </div>
@@ -116,9 +116,8 @@
 
 
    <!-- jquery file -->
-   <script src="/assets/js/jquery-3.2.1.min.js"></script>
-   <script src="/assets/js/owl.carousel.min.js"></script>
-   <script src="/assets/js/app.js"></script>
+   <script src="<?= base_url('/assets/js/owl.carousel.min.js') ?>"></script>
+   <script src="<?= base_url('/assets/js/app.js') ?>"></script>
 
    </body>
 

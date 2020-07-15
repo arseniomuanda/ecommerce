@@ -14,7 +14,7 @@ class UserModel extends Model
 
     protected $allowedFields = ['setting_id', 'name', 'password', 'email', 'phone', 'is_admin', 'status', 'country', 'city', 'district', 'street', 'home'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
@@ -29,5 +29,11 @@ class UserModel extends Model
             return $this;
         $this->where(['id' => $id]);
         return $this;
+    }
+
+    public function get_user($data)
+    {
+        $query = $this->db->table($this->table)->getWhere($data);
+        return $query->getResult();
     }
 }

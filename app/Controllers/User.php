@@ -21,6 +21,12 @@ class User extends BaseController
         $data['user'] = $model->get($id)->paginate(1);
     }
 
+        public function deletar($id)
+    {
+        $model = new UserModel();
+        return $model->delete($id);
+    }
+
     public function create()
     {
         $model = new UserModel();
@@ -30,7 +36,6 @@ class User extends BaseController
             'password' => 'required|min_length[3]|max_length[50]',
             'email' => 'required|min_length[3]|max_length[50]',
             'phone' => 'required|min_length[3]|max_length[50]',
-            'is_admin' => 'required|min_length[3]|max_length[50]',
             'status' => 'required|min_length[3]|max_length[50]',
             'country' => 'required|min_length[3]|max_length[50]',
             'city' => 'required|min_length[3]|max_length[50]',
@@ -42,13 +47,13 @@ class User extends BaseController
         } else {
             return $model->save([
                 'id' => $this->request->getVar('id'),
-                'setting_id' => $this->request->getVar('setting_id'),
+                'setting_id' => 1,
                 'name' => $this->request->getVar('name'),
                 'password' => $this->request->getVar('password'),
                 'email' => $this->request->getVar('email'),
                 'phone' => $this->request->getVar('phone'),
-                'is_admin' => $this->request->getVar('is_admin'),
-                'status' => $this->request->getVar('status'),
+                'is_admin' => 0,
+                'status' => 1,
                 'country' => $this->request->getVar('country'),
                 'city' => $this->request->getVar('city'),
                 'district' => $this->request->getVar('street'),
@@ -58,9 +63,4 @@ class User extends BaseController
         }
     }
 
-    public function deletar($id)
-    {
-        $model = new UserModel();
-        return $model->delete($id);
-    }
 }

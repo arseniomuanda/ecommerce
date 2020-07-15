@@ -14,7 +14,7 @@ class BuyModel extends Model
 
     protected $allowedFields = ['setting_id', 'contact_id', 'number', 'cost', 'category', 'status', 'date'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';

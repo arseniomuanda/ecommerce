@@ -14,7 +14,7 @@ class ItemModel extends Model
 
     protected $allowedFields = ['setting_id', 'name', 'cost', 'price', 'amount', 'manufactured', 'due_date', 'category'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';

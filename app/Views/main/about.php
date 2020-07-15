@@ -1,16 +1,4 @@
 <!-- View | About Us -->
-
-<div class="section" id="start">
-            <div class="container">
-                <h2>
-                    About Us
-                </h2>
-                <h3>When, Who and Where?</h3>
-                <hr>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores animi eligendi quisquam quas dolor nihil.</p>
-                
-            </div>
-        </div>
     <!-- about -->
     <a name="overview"></a>
     <div class="section" id="overview">
@@ -18,7 +6,7 @@
             <div class="overview-content">
 
                 <div>
-                    <img src="/assets/images/overview.jpg" alt="">
+                    <img src="<?= base_url('/assets/images/overview.jpg')?>" alt="">
                 </div>
                 <div>
                     <h2><strong>We are Vegan</strong></h2>
